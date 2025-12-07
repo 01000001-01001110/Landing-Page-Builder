@@ -1,0 +1,14 @@
+# CODEOWNERS - Define code ownership for pull request reviews
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Default owner for everything in the repo
+* @AlanNewingham
+
+# Core application files
+/js/ @AlanNewingham
+/css/ @AlanNewingham
+/index.html @AlanNewingham
+
+# Server and infrastructure
+/server.py @AlanNewingham
+/.github/ @AlanNewingham

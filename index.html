@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page Builder</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Segoe UI is a system font, no Google Font import needed for basic support, 
+         but we keep Inter or Roboto if desired. For now, relying on system fonts. -->
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <h1 class="app-title">
+                <svg class="icon-svg logo-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M3 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3Z"
+                        stroke="currentColor" stroke-width="2" />
+                    <path d="M2 9H22" stroke="currentColor" stroke-width="2" />
+                    <path d="M9 21V9" stroke="currentColor" stroke-width="2" />
+                </svg>
+                Landing Page Builder
+            </h1>
+            <button id="settingsBtn" class="btn-settings">
+                <svg class="icon-svg settings-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                        d="M19.4 15C20.4 14.3 21 13.2 21 12C21 10.8 20.4 9.7 19.4 9L20 6.8C18.6 6.1 17.1 5.7 15.6 5.6L14.9 8C13.9 7.6 12.9 7.4 11.9 7.4L11.2 5C10.4 5.2 9.7 5.5 9 5.8L9.6 8C8.6 8.4 7.7 9 6.9 9.7L4.7 9C4.3 9.7 4.1 10.4 4 11.2L6.3 12C6.3 12.5 6.3 13 6.3 13.5L4 14.3C4.2 15.3 4.5 16.2 5 17L7.2 16.2C7.9 16.9 8.7 17.5 9.6 17.9L9 20.2C9.8 20.4 10.6 20.6 11.4 20.7L12.1 18.3C12.7 18.3 13.4 18.3 14 18.3L14.7 20.7C15.9 20.5 17 20 18 19.3L17.4 17.1C18.2 16.5 18.9 15.8 19.4 15Z"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                API Settings
+            </button>
+        </header>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Input Panel -->
+            <div class="input-panel">
+                <h2>Page Details</h2>
+                <div id="inputForm">
+                    <!-- Required Fields -->
+                    <div class="form-group">
+                        <label for="companyName">Company Name *</label>
+                        <input type="text" id="companyName" required maxlength="100" value="Lumon Industries">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="slogan">Slogan *</label>
+                        <input type="text" id="slogan" required maxlength="200"
+                            value="The ultimate in work-life balance.">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Description *</label>
+                        <textarea id="description" required minlength="10" maxlength="500"
+                            rows="4">A legacy biotech conglomerate founded by Kier Eagan (1865) and led by the Eagan family. Lumon develops pharmaceuticals/biotech and promotes the Severance Procedure—an implanted chip that partitions work and personal memory as a "work-life balance" breakthrough.</textarea>
+                    </div>
+
+                    <!-- Dropdown Fields with Tooltips -->
+                    <div class="form-group">
+                        <label for="industry">
+                            Industry
+                            <span class="tooltip-trigger" data-tooltip="industry">
+                                <span class="tooltip-icon">?</span>
+                            </span>
+                        </label>
+                        <select id="industry">
+                            <optgroup label="Technology">
+                                <option value="tech" data-desc="Software, apps, SaaS, and digital products">Tech / Software</option>
+                                <option value="ai-ml" data-desc="Artificial intelligence and machine learning solutions">AI & Machine Learning</option>
+                                <option value="cybersecurity" data-desc="Security software, threat protection, compliance">Cybersecurity</option>
+                                <option value="cloud-services" data-desc="Cloud computing, infrastructure, hosting">Cloud Services</option>
+                            </optgroup>
+                            <optgroup label="Professional Services">
+                                <option value="finance" data-desc="Banking, investments, insurance, fintech">Finance & Banking</option>
+                                <option value="legal" data-desc="Law firms, legal services, compliance">Legal Services</option>
+                                <option value="consulting" data-desc="Business consulting, strategy, advisory">Consulting</option>
+                                <option value="real-estate" data-desc="Property, real estate, architecture">Real Estate</option>
+                                <option value="accounting" data-desc="Accounting, tax, bookkeeping services">Accounting</option>
+                            </optgroup>
+                            <optgroup label="Healthcare & Wellness">
+                                <option value="healthcare" selected data-desc="Medical services, hospitals, clinics">Healthcare</option>
+                                <option value="pharma" data-desc="Pharmaceutical, biotech, life sciences">Pharma & Biotech</option>
+                                <option value="wellness" data-desc="Fitness, mental health, holistic wellness">Wellness & Fitness</option>
+                                <option value="dental" data-desc="Dental practices, orthodontics">Dental</option>
+                            </optgroup>
+                            <optgroup label="Consumer & Retail">
+                                <option value="ecommerce" data-desc="Online stores, marketplaces, D2C brands">E-commerce</option>
+                                <option value="retail" data-desc="Brick-and-mortar stores, retail chains">Retail</option>
+                                <option value="food-beverage" data-desc="Restaurants, cafes, food products">Food & Beverage</option>
+                                <option value="fashion" data-desc="Clothing, accessories, luxury goods">Fashion & Apparel</option>
+                                <option value="beauty" data-desc="Cosmetics, skincare, beauty services">Beauty & Cosmetics</option>
+                            </optgroup>
+                            <optgroup label="Creative & Media">
+                                <option value="creative" data-desc="Design studios, agencies, creative services">Creative Agency</option>
+                                <option value="media" data-desc="Media companies, publishing, entertainment">Media & Entertainment</option>
+                                <option value="photography" data-desc="Photography, videography, visual arts">Photography</option>
+                                <option value="gaming" data-desc="Video games, esports, game studios">Gaming</option>
+                            </optgroup>
+                            <optgroup label="Education & Non-Profit">
+                                <option value="education" data-desc="Schools, courses, e-learning platforms">Education</option>
+                                <option value="nonprofit" data-desc="Charities, NGOs, social enterprises">Non-Profit</option>
+                            </optgroup>
+                            <optgroup label="Industrial & Services">
+                                <option value="manufacturing" data-desc="Manufacturing, industrial, B2B products">Manufacturing</option>
+                                <option value="logistics" data-desc="Shipping, supply chain, transportation">Logistics</option>
+                                <option value="automotive" data-desc="Cars, automotive services, EV">Automotive</option>
+                                <option value="travel" data-desc="Travel, tourism, hospitality">Travel & Tourism</option>
+                                <option value="energy" data-desc="Energy, utilities, clean tech">Energy & Utilities</option>
+                            </optgroup>
+                            <optgroup label="Other">
+                                <option value="startup" data-desc="Early-stage startups, MVPs">Startup</option>
+                                <option value="other" data-desc="Other industry not listed">Other</option>
+                            </optgroup>
+                        </select>
+                        <div id="industryTooltip" class="option-tooltip"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="style">
+                            Design Style
+                            <span class="tooltip-trigger" data-tooltip="style">
+                                <span class="tooltip-icon">?</span>
+                            </span>
+                        </label>
+                        <select id="style">
+                            <optgroup label="Professional">
+                                <option value="modern-minimal" data-desc="Clean lines, lots of whitespace, subtle accents. Best for: tech, SaaS, luxury brands">Modern Minimal</option>
+                                <option value="corporate-trust" selected data-desc="Traditional, authoritative look with serif fonts. Best for: finance, legal, healthcare">Corporate Trust</option>
+                                <option value="enterprise-pro" data-desc="Polished enterprise aesthetic with data-driven feel. Best for: B2B, enterprise software">Enterprise Pro</option>
+                            </optgroup>
+                            <optgroup label="Creative">
+                                <option value="bold-playful" data-desc="Vibrant colors, fun animations, energetic vibe. Best for: startups, gaming, youth brands">Bold & Playful</option>
+                                <option value="artistic-craft" data-desc="Handcrafted feel, organic shapes, artisan aesthetic. Best for: creative, boutique, artisan">Artistic Craft</option>
+                                <option value="retro-vintage" data-desc="Nostalgic design with classic typography. Best for: heritage brands, food, music">Retro Vintage</option>
+                            </optgroup>
+                            <optgroup label="Modern">
+                                <option value="dark-sleek" data-desc="Dark mode with neon accents, futuristic feel. Best for: tech, gaming, crypto">Dark & Sleek</option>
+                                <option value="gradient-glass" data-desc="Glassmorphism with colorful gradients. Best for: apps, fintech, modern startups">Gradient Glass</option>
+                                <option value="neo-brutalist" data-desc="Bold borders, raw aesthetic, high contrast. Best for: creative agencies, tech startups">Neo Brutalist</option>
+                            </optgroup>
+                            <optgroup label="Approachable">
+                                <option value="warm-friendly" data-desc="Soft colors, rounded corners, welcoming feel. Best for: wellness, education, family">Warm & Friendly</option>
+                                <option value="nature-organic" data-desc="Earth tones, natural imagery, eco-friendly vibe. Best for: sustainability, health, organic">Nature Organic</option>
+                                <option value="soft-pastel" data-desc="Light pastel palette, gentle gradients. Best for: beauty, baby, lifestyle brands">Soft Pastel</option>
+                            </optgroup>
+                        </select>
+                        <div id="styleTooltip" class="option-tooltip"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="imageStyle">
+                            Image Style
+                            <span class="tooltip-trigger" data-tooltip="imageStyle">
+                                <span class="tooltip-icon">?</span>
+                            </span>
+                        </label>
+                        <select id="imageStyle">
+                            <optgroup label="Realistic">
+                                <option value="photorealistic" data-desc="Lifelike photos with natural lighting. Best for: corporate, healthcare, real estate">Photorealistic</option>
+                                <option value="editorial-photo" data-desc="Magazine-quality lifestyle photography. Best for: fashion, travel, luxury">Editorial Photography</option>
+                                <option value="product-studio" data-desc="Clean product shots on neutral backgrounds. Best for: e-commerce, retail">Product Studio</option>
+                            </optgroup>
+                            <optgroup label="Illustrated">
+                                <option value="illustrated" data-desc="Hand-drawn style with organic lines. Best for: startups, creative, education">Hand Illustrated</option>
+                                <option value="line-art" data-desc="Minimal line drawings, single color. Best for: minimal designs, tech, legal">Line Art</option>
+                                <option value="watercolor" data-desc="Soft watercolor painting effect. Best for: wellness, beauty, artisan">Watercolor</option>
+                                <option value="isometric" data-desc="3D-like isometric illustrations. Best for: tech, SaaS, fintech">Isometric</option>
+                            </optgroup>
+                            <optgroup label="Digital Art">
+                                <option value="3d-render" data-desc="Polished 3D rendered graphics. Best for: tech, gaming, futuristic brands">3D Render</option>
+                                <option value="abstract-geometric" data-desc="Shapes, patterns, abstract compositions. Best for: modern brands, agencies">Abstract Geometric</option>
+                                <option value="flat-design" data-desc="Simple shapes, solid colors, no shadows. Best for: apps, SaaS, tech">Flat Design</option>
+                                <option value="gradient-mesh" data-desc="Smooth color gradients, modern aesthetic. Best for: fintech, apps, startups">Gradient Mesh</option>
+                                <option value="neon-glow" data-desc="Glowing neon effects on dark backgrounds. Best for: gaming, nightlife, crypto">Neon Glow</option>
+                            </optgroup>
+                            <optgroup label="Stylized">
+                                <option value="pixel-art" data-desc="Retro pixel-based graphics. Best for: gaming, retro brands, indie">Pixel Art</option>
+                                <option value="paper-cutout" data-desc="Layered paper craft aesthetic. Best for: children's brands, craft, education">Paper Cutout</option>
+                                <option value="claymation" data-desc="Clay/plasticine sculpted look. Best for: playful brands, food, kids">Claymation</option>
+                            </optgroup>
+                        </select>
+                        <div id="imageStyleTooltip" class="option-tooltip"></div>
+                    </div>
+
+                    <!-- Advanced Options -->
+                    <details class="advanced-options">
+                        <summary>▼ Advanced Options</summary>
+                        <div class="form-group">
+                            <label for="primaryColor">Primary Color</label>
+                            <input type="color" id="primaryColor" value="#0078D4" title="Metro Blue">
+                            <small style="color: var(--text-light); margin-top: 0.25rem; display: block;">
+                                Current: <span id="colorPreview" style="font-family: monospace;">#0B4F6C</span> (Lumon
+                                Blue)
+                            </small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ctaText">CTA Button Text</label>
+                            <input type="text" id="ctaText" value="Apply for Severance" maxlength="30">
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label>
+                                <input type="checkbox" id="includeTestimonials" checked>
+                                Include Testimonials
+                            </label>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="featureCount">Number of Features</label>
+                            <select id="featureCount">
+                                <option value="3" selected>3</option>
+                                <option value="4">4</option>
+                                <option value="6">6</option>
+                            </select>
+                        </div>
+                    </details>
+
+                    <!-- Generate Button -->
+                    <button type="button" id="generateBtn" class="btn-primary btn-generate">
+                        🚀 Generate Landing Page
+                    </button>
+
+                    <!-- Status -->
+                    <div id="statusContainer" class="status-container">
+                        <p class="status-text">Ready</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Preview Panel -->
+            <div class="preview-panel">
+                <div class="preview-header">
+                    <h2>Preview</h2>
+                    <div id="viewToggle" class="view-toggle" style="display: none;">
+                        <button id="progressViewBtn" class="view-btn active" data-view="progress">Progress</button>
+                        <button id="previewViewBtn" class="view-btn" data-view="preview">Preview</button>
+                    </div>
+                </div>
+                <div class="preview-container">
+                    <iframe id="previewFrame" sandbox="allow-scripts allow-same-origin"
+                        referrerpolicy="no-referrer"></iframe>
+                    <iframe id="livePreviewFrame" sandbox="allow-scripts allow-same-origin"
+                        referrerpolicy="no-referrer" style="display: none;"></iframe>
+                    <div id="previewPlaceholder" class="preview-placeholder">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M21 4H3C2.44772 4 2 4.44772 2 5V19C2 19.5523 2.44772 20 3 20H21C21.5523 20 22 19.5523 22 19V5C22 4.44772 21.5523 4 21 4Z"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M2 9H22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M7 20V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <p>Ready to generate your page</p>
+                    </div>
+                </div>
+
+                <!-- Validation Results -->
+                <div id="validationResults" class="validation-results" style="display: none;"></div>
+
+                <!-- Download Actions -->
+                <div class="action-buttons">
+                    <button id="downloadBtn" class="btn-action" disabled>
+                        📥 Download ZIP
+                    </button>
+                    <button id="copyCodeBtn" class="btn-action" disabled>
+                        📋 Copy HTML
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress Indicator -->
+        <div id="progressContainer" class="progress-container" style="display: none;">
+            <div class="progress-bar">
+                <div id="progressFill" class="progress-fill" style="width: 0%;"></div>
+            </div>
+            <div id="progressSteps" class="progress-steps">
+                <div class="step">○ Phase 1: Creating execution plan...</div>
+                <div class="step">○ Phase 2: ⚡ Orchestrated parallel generation...</div>
+                <div class="step">○ Phase 3: Assembling components...</div>
+                <div class="step">○ Phase 4: Rendering preview...</div>
+            </div>
+            <p id="progressText" class="progress-text"></p>
+        </div>
+
+        <!-- Error Display -->
+        <div id="errorContainer" class="error-container" style="display: none;"></div>
+    </div>
+
+    <!-- API Settings Modal -->
+    <div id="settingsModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>⚙️ API Configuration</h2>
+                <button id="closeModal" class="btn-close">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="info-box">
+                    🔐 Your API keys are stored locally in your browser and never sent to any server except the APIs.
+                </div>
+
+                <div class="form-group">
+                    <label for="anthropicKey">Anthropic API Key (for code generation)</label>
+                    <div class="input-with-toggle">
+                        <input type="password" id="anthropicKey" placeholder="sk-ant-api03-...">
+                        <button type="button" class="btn-toggle-password" data-target="anthropicKey">👁️</button>
+                    </div>
+                    <small>Get key: <a href="https://console.anthropic.com"
+                            target="_blank">https://console.anthropic.com</a></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="googleKey">Google AI API Key (for image generation)</label>
+                    <div class="input-with-toggle">
+                        <input type="password" id="googleKey" placeholder="AIza...">
+                        <button type="button" class="btn-toggle-password" data-target="googleKey">👁️</button>
+                    </div>
+                    <small>Get key: <a href="https://aistudio.google.com/apikey"
+                            target="_blank">https://aistudio.google.com/apikey</a></small>
+                </div>
+
+                <div class="warning-box">
+                    ⚠️ IMPORTANT: API keys stored in browser localStorage are visible to anyone with access to your
+                    browser's developer tools. Consider using API keys with spending limits.
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="testConnectionBtn" class="btn-secondary">Test Connection</button>
+                <button id="saveKeysBtn" class="btn-primary">Save Keys</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script type="module" src="js/app.js"></script>
+</body>
+
+</html>
