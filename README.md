@@ -6,6 +6,8 @@ Generate production-ready landing pages in seconds using AI. Built with Claude S
 ![Claude](https://img.shields.io/badge/Claude-Sonnet%204-blueviolet)
 ![Gemini](https://img.shields.io/badge/Gemini-2.5%20Flash-orange)
 
+<img width="2555" height="1268" alt="Image" src="https://github.com/user-attachments/assets/d7beacfa-efd7-4655-93c1-c1b5e732365c" />
+
 ## Features
 
 - **AI-Powered Generation** - Claude Sonnet generates semantic HTML, modern CSS, and JavaScript
@@ -18,6 +20,8 @@ Generate production-ready landing pages in seconds using AI. Built with Claude S
 - **16 Image Styles** - Photorealistic, illustrated, 3D render, and more
 - **Downloadable ZIP** - Complete file structure ready to deploy
 - **No Backend Required** - Runs entirely in the browser (with local Python proxy for CORS)
+
+
 
 ## Quick Start
 
