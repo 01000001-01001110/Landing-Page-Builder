@@ -127,7 +127,7 @@ Each image prompt must be 75-150 words and include:
    - Negative space for overlays (if applicable)
 
 ### Example Image Prompt
-"A photorealistic hero image showing a modern minimalist office space with a diverse team of three professionals collaborating around a large touchscreen display. The scene is captured from a slightly elevated angle, creating depth. Natural sunlight streams through floor-to-ceiling windows on the left, casting soft shadows and creating a warm, welcoming atmosphere. The color palette centers around ${primaryColor} with complementary cool grays and warm whites. The team members are engaged and smiling, one pointing at the screen. The composition leaves significant negative space in the upper right quadrant for text overlay. Professional photography style with subtle depth of field, ultra-sharp focus on the central figures. 16:9 aspect ratio. No text in the image."
+"A photorealistic hero image showing a modern minimalist office space with a diverse team of three professionals collaborating around a large touchscreen display. The scene is captured from a slightly elevated angle, creating depth. Natural sunlight streams through floor-to-ceiling windows on the left, casting soft shadows and creating a warm, welcoming atmosphere. The color palette centers around [PRIMARY_COLOR] with complementary cool grays and warm whites. The team members are engaged and smiling, one pointing at the screen. The composition leaves significant negative space in the upper right quadrant for text overlay. Professional photography style with subtle depth of field, ultra-sharp focus on the central figures. 16:9 aspect ratio. No text in the image."
 
 # DESIGN QUALITY CHECKLIST
 
