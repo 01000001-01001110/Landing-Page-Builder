@@ -117,17 +117,48 @@ This starts a local server at `http://localhost:8000` and opens your browser.
 
 ### Orchestrated Generation
 
-The app uses a sophisticated task orchestration system:
+The app uses a sophisticated 4-phase task orchestration system:
 
-1. **Planning Phase** - Creates execution plan, enhances content
-2. **Execution Phase** - Parallel generation of:
-   - Design system (colors, typography)
-   - Images (hero + feature icons)
-   - Components (header, hero, features, CTA, footer)
-3. **Assembly Phase** - Combines HTML, CSS, JavaScript
-4. **Validation Phase** - Real validation checks with Sonnet auto-fix
+**1. Planning Phase**
+- Creating execution plan
+- Enhancing content with AI
 
-### Design Styles
+**2. Execution Phase** (parallel tasks)
+- Color palette generation
+- Typography system
+- Image prompt generation
+- Hero image (Gemini 2.5 Flash)
+- Feature icons (Gemini 2.5 Flash)
+- Header component
+- Hero section
+- Features section
+- Testimonials section
+- Call-to-action section
+- Footer component
+
+**3. Assembly Phase**
+- HTML assembly
+- CSS compilation
+- JavaScript bundling
+
+**4. Complete Phase**
+- Validation & auto-fix (Sonnet)
+- Final rendering
+
+### Industries (28)
+
+| Category | Industries |
+|----------|-----------|
+| Technology | Tech/Software, AI & ML, Cybersecurity, Cloud Services |
+| Professional | Finance, Legal, Consulting, Real Estate, Accounting |
+| Healthcare | Healthcare, Pharma, Wellness, Dental |
+| Consumer | E-commerce, Retail, Food & Beverage, Fashion, Beauty |
+| Creative | Creative Agency, Media, Photography, Gaming |
+| Education | Education, Non-Profit |
+| Industrial | Manufacturing, Logistics, Automotive, Travel, Energy |
+| Other | Startup, Other |
+
+### Design Styles (12)
 
 | Category | Styles |
 |----------|--------|
@@ -136,7 +167,7 @@ The app uses a sophisticated task orchestration system:
 | Modern | Dark & Sleek, Gradient Glass, Neo Brutalist |
 | Approachable | Warm & Friendly, Nature Organic, Soft Pastel |
 
-### Image Styles
+### Image Styles (16)
 
 | Category | Styles |
 |----------|--------|
@@ -150,7 +181,7 @@ The app uses a sophisticated task orchestration system:
 | Service | Cost per Generation |
 |---------|---------------------|
 | Claude Sonnet | ~$0.15-0.30 |
-| Gemini Images | ~$0.20-0.30 (5-7 images) |
+| Gemini 2.5 Flash | ~$0.20-0.30 (5-7 images) |
 | **Total** | **~$0.35-0.60** |
 
 ## Generated Output
@@ -160,13 +191,14 @@ Downloaded ZIP contains:
 ```
 /your-company-name/
 ├── index.html          # Complete landing page
+├── README.md           # Usage instructions
 ├── css/
-│   └── styles.css      # All styles
+│   └── styles.css      # All styles with CSS variables
 ├── js/
-│   └── main.js         # Interactivity
+│   └── main.js         # Smooth scroll & interactivity
 └── images/
-    ├── hero.png        # Hero section image
-    └── feature-*.png   # Feature icons
+    ├── hero.png        # Hero section image (16:9)
+    └── feature-*.png   # Feature icons (1:1)
 ```
 
 ## Development
