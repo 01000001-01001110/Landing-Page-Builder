@@ -210,11 +210,11 @@ python3 server.py
 
 This starts a local server at `http://localhost:8000` and opens your browser.
 
-### 4. Load API Keys
+### 4. Enter API Keys
 
-1. Navigate to `http://localhost:8000/setup-keys.html`
-2. Click "Load Keys from .env"
-3. Keys are stored in browser localStorage
+1. Click "API Settings" button in the app header
+2. Enter your Anthropic and Google AI API keys
+3. Click "Save Keys" (keys are stored in browser localStorage)
 
 ### 5. Generate!
 
@@ -229,7 +229,6 @@ This starts a local server at `http://localhost:8000` and opens your browser.
 ```
 /landing-page-builder/
 ├── index.html                  # Main application
-├── setup-keys.html             # API key setup helper
 ├── server.py                   # Python server with API proxy
 ├── start.bat                   # Windows start script
 │
@@ -514,8 +513,7 @@ Requires: JavaScript enabled, localStorage enabled
 ## Troubleshooting
 
 **"API keys required" error**
-- Open Settings and enter your API keys
-- Or use setup-keys.html to load from .env
+- Click "API Settings" in the header and enter your API keys
 
 **Generation fails**
 - Check API keys are valid
