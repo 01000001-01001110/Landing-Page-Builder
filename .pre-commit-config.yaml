@@ -1,0 +1,35 @@
+# Pre-commit hooks configuration
+# https://pre-commit.com/
+
+repos:
+  # General file checks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      # Line ending checks
+      - id: end-of-file-fixer
+        description: Ensures files end with a newline
+      - id: mixed-line-ending
+        args: ['--fix=lf']
+        description: Forces LF line endings
+      - id: trailing-whitespace
+        description: Trims trailing whitespace
+
+      # File content checks
+      - id: check-merge-conflict
+        description: Checks for merge conflict markers
+      - id: check-json
+        description: Validates JSON files
+      - id: check-yaml
+        description: Validates YAML files
+      - id: check-added-large-files
+        args: ['--maxkb=500']
+        description: Prevents large files from being committed
+
+  # Detect secrets
+  - repo: https://github.com/Yelp/detect-secrets
+    rev: v1.4.0
+    hooks:
+      - id: detect-secrets
+        args: ['--baseline', '.secrets.baseline']
+        exclude: package-lock\.json

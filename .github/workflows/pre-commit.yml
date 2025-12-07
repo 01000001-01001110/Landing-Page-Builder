@@ -1,0 +1,82 @@
+name: Pre-commit Checks
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  pre-commit:
+    name: Pre-commit Checks
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install pre-commit
+        run: pip install pre-commit
+
+      - name: Run pre-commit hooks
+        run: pre-commit run --all-files --show-diff-on-failure
+
+  line-endings:
+    name: Check Line Endings
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Check for CRLF line endings
+        run: |
+          echo "Checking for CRLF line endings..."
+
+          # Find files with CRLF (excluding binary files and certain directories)
+          CRLF_FILES=$(find . -type f \
+            -not -path "./.git/*" \
+            -not -path "./node_modules/*" \
+            -not -name "*.png" \
+            -not -name "*.jpg" \
+            -not -name "*.ico" \
+            -not -name "*.woff*" \
+            -not -name "*.ttf" \
+            -not -name "*.eot" \
+            -exec grep -Pl '\r\n' {} \; 2>/dev/null || true)
+
+          if [ -n "$CRLF_FILES" ]; then
+            echo "❌ Found files with CRLF line endings:"
+            echo "$CRLF_FILES"
+            echo ""
+            echo "Please convert these files to LF line endings."
+            echo "You can use: git config core.autocrlf input"
+            exit 1
+          else
+            echo "✅ All files have LF line endings"
+          fi
+
+      - name: Check for trailing whitespace
+        run: |
+          echo "Checking for trailing whitespace..."
+
+          # Find files with trailing whitespace
+          TRAILING_WS=$(find . -type f \
+            -not -path "./.git/*" \
+            -not -path "./node_modules/*" \
+            -name "*.js" -o -name "*.css" -o -name "*.html" -o -name "*.py" -o -name "*.md" -o -name "*.json" -o -name "*.yml" -o -name "*.yaml" \
+            2>/dev/null | xargs grep -l '[[:blank:]]$' 2>/dev/null || true)
+
+          if [ -n "$TRAILING_WS" ]; then
+            echo "⚠️ Found files with trailing whitespace:"
+            echo "$TRAILING_WS"
+            echo ""
+            echo "Consider removing trailing whitespace."
+          else
+            echo "✅ No trailing whitespace found"
+          fi
