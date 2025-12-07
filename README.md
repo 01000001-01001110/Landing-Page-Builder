@@ -28,7 +28,7 @@ Generate production-ready landing pages in seconds using AI. Built with Claude S
 ### 1. Clone & Setup
 
 ```bash
-git clone https://github.com/yourusername/landing-page-builder.git
+git clone https://github.com/01000001-01001110/landing-page-builder.git
 cd landing-page-builder
 
 # Copy environment template
@@ -77,9 +77,11 @@ This starts a local server at `http://localhost:8000` and opens your browser.
 ├── index.html                  # Main application
 ├── setup-keys.html             # API key setup helper
 ├── server.py                   # Python server with API proxy
-├── .env.example                # Environment template
+├── start.bat                   # Windows start script
+│
 ├── css/
 │   └── styles.css              # Application styles (Fluent Design)
+│
 ├── js/
 │   ├── app.js                  # Main controller & orchestration
 │   ├── api-manager.js          # API key management
@@ -90,11 +92,25 @@ This starts a local server at `http://localhost:8000` and opens your browser.
 │   ├── html-validator.js       # Validation & auto-fix
 │   ├── style-matrix.js         # 12 design system configurations
 │   ├── prompt-engineering.js   # Advanced prompt system
+│   ├── prompt-builder.js       # Prompt construction utilities
+│   ├── image-prompt-predictor.js # Predictive image generation
 │   ├── preview-manager.js      # Preview rendering
 │   ├── response-parser.js      # Robust JSON parsing
+│   ├── validator.js            # Code quality validation
 │   └── zip-builder.js          # ZIP file creation
-└── .github/
-    └── CODEOWNERS              # Code ownership
+│
+├── .github/
+│   └── workflows/
+│       └── pre-commit.yml      # CI checks for line endings
+│
+├── .env.example                # Environment template
+├── .gitignore                  # Git ignore rules
+├── .gitattributes              # Line ending configuration
+├── .editorconfig               # Editor settings
+├── .pre-commit-config.yaml     # Pre-commit hooks
+├── CODEOWNERS                  # Code ownership
+├── LICENSE                     # MIT License
+└── README.md                   # This file
 ```
 
 ## Architecture
