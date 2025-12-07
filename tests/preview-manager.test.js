@@ -251,14 +251,12 @@ describe('preview-manager', () => {
     it('should revoke previous blob URLs on subsequent calls', () => {
       const output = createBaseOutput();
 
-      // First render
-      renderPreview(output);
-      const firstCallCount = mockCreateObjectURL.mock.calls.length;
-
-      // Second render should revoke previous URLs
+      // First render creates blob URLs
       renderPreview(output);
 
-      // The first render created URLs, then the second render should have revoked them
+      // Second render should revoke previous URLs before creating new ones
+      renderPreview(output);
+
       expect(mockRevokeObjectURL).toHaveBeenCalled();
     });
   });

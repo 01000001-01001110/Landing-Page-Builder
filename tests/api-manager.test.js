@@ -3,7 +3,7 @@
  * Tests API key storage and retrieval functionality
  */
 
-import { describe, it, expect, beforeEach, vi } from 'vitest';
+import { describe, it, expect, beforeEach } from 'vitest';
 import { ApiKeyManager } from '../js/api-manager.js';
 
 describe('ApiKeyManager', () => {

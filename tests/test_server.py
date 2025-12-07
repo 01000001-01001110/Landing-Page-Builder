@@ -3,17 +3,11 @@ Tests for the Landing Page Builder Python server.
 Tests the HTTP server functionality, API proxy endpoints, and CORS handling.
 """
 
-import json
 import os
-import signal
 import socket
 import subprocess
 import sys
-import time
 import unittest
-from http.client import HTTPConnection
-from threading import Thread
-from unittest.mock import patch, MagicMock
 
 # Add parent directory to path for imports
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
