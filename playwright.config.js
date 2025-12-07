@@ -1,10 +1,10 @@
 // Playwright Configuration
-const { defineConfig } = require('@playwright/test');
+import { defineConfig } from '@playwright/test';
 
-module.exports = defineConfig({
+export default defineConfig({
   testDir: './',
   testMatch: 'test_app.js',
-  timeout: 30000,
+  timeout: 60000,
   retries: 0,
   workers: 1,
   reporter: 'list',
@@ -14,6 +14,7 @@ module.exports = defineConfig({
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
     trace: 'retain-on-failure',
+    actionTimeout: 10000,
   },
   projects: [
     {

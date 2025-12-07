@@ -2,10 +2,14 @@
   "name": "landing-page-builder",
   "version": "1.0.0",
   "description": "AI-powered landing page builder with Claude Sonnet 4.5 and Gemini 2.5 Flash",
+  "type": "module",
   "scripts": {
     "test": "playwright test",
     "test:headed": "playwright test --headed",
-    "test:debug": "playwright test --debug"
+    "test:debug": "playwright test --debug",
+    "test:unit": "vitest run",
+    "test:unit:watch": "vitest",
+    "test:all": "npm run test:unit && npm test"
   },
   "keywords": [
     "landing-page",
@@ -16,6 +20,9 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@playwright/test": "^1.57.0"
+    "@playwright/test": "^1.57.0",
+    "@vitest/coverage-v8": "^3.2.4",
+    "jsdom": "^25.0.0",
+    "vitest": "^3.0.0"
   }
 }

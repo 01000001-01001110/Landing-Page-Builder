@@ -172,7 +172,7 @@ function generateSkeletonHTML() {
             scrollbar-width: thin;
             scrollbar-color: var(--border) var(--bg);
         }
-        
+
         /* Metro Scrollbar */
         ::-webkit-scrollbar {
             width: 10px;
